@@ -106,4 +106,82 @@ class Polynomial
 	public:
 		LinkedList<Term>* iCantReadSridharsWriting;
 };
+
+// LinkedList as Array
+template<class DT>
+class LinkedListRow
+{
+protected:
+	DT* _info;
+	int _next;
+	int start; // first index position
+}
+
+// Types of LinkedLists
+	-Dolly LinkedList
+	-Circularly LinkedList
+	-Generalized List
+
+// Purpose of the stack is to remember the recent something. Used for backtracking
+
+template<class DT>
+class ArrayStack
+{
+protected:
+	int _top;
+	Arrayclass<DT>* myStack;
+public:
+	ArrayStack();
+	ArrayStack(const DT &copy);
+	~ArrayStack();
+	DT& pop();
+	void push(DT &x);
+	DT& peek();
+	int size;
+}
+
+template<class DT>
+void ArrayStack<DT>::push(DT &x)
+{
+	if (_top ==*S.size())
+	{
+		throw stackoverflow();
+	}
+	else
+	{
+		S[_top] = x;
+		_top++
+	}
+}
+
+template<class DT>
+class LinkedListStack
+{
+protected:
+	LinkedList<DT>* S;
+public:
+	
+}
+
+template<class DT>
+DT& LinkedListStack<DT>::pop()
+{
+	if (_info == NULL)
+	{
+		throw stackoverflow();
+	}
+	else
+	{
+		DT temp = (*S).info();
+		(*S).remove();
+		return temp;
+	}
+}
+
+int main()
+{
+	ArrayStack<int>* myStack = new ArrayStack<int>(100);
+	(*myStack).push(100);
+	(*myStack).push(20)
+}
 */
