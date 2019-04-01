@@ -37,4 +37,7 @@
 "Are you with me? Play with me okay."
 "It's kind of nasty but it's easy"
 "I take the middle most element of this array and say .... stop it"
+" ... because I'm very smart, just kidding ... "
+"It makes that sound too"
+"You guys are mean!"
 */

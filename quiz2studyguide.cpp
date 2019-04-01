@@ -17,6 +17,11 @@
 		- Non-recursive algorithms for pre order, in order traversals
 	- From March 27th
 		- Number of ways to store a binary tree
+	- From April 1st // exam, not quiz
+		- Self Adjusting Binary Search Trees
+		- Zig and Zag operations
+		- Given a BST, do a splay on a given node
+		- Given a splay tree, find a given node
 
 - Things we went over but were not said would be on quiz or exam:
 	- From March 11th
@@ -32,4 +37,8 @@
 		- Project 4 information
 	- From March 27th
 		- Binary Search Tree
+	- From April 1st
+		- Finding values in BST
+		- Removing values in BST
+		- BST complexity
 */
