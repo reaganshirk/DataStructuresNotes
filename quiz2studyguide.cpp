@@ -17,11 +17,11 @@
 		- Non-recursive algorithms for pre order, in order traversals
 	- From March 27th
 		- Number of ways to store a binary tree
-	- From April 1st // exam, not quiz
-		- Self Adjusting Binary Search Trees
-		- Zig and Zag operations
-		- Given a BST, do a splay on a given node
-		- Given a splay tree, find a given node
+	- From April 1st 
+		- Give template for a zig/zag
+		- Give sequence of C++ assignments to give a zag operation
+		- Given a BST, do a splay. Give all rotations and such
+		- Given a splay tree, do a find on a given number (rotate until that number is the node)
 
 - Things we went over but were not said would be on quiz or exam:
 	- From March 11th

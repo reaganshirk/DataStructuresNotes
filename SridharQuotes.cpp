@@ -40,4 +40,5 @@
 " ... because I'm very smart, just kidding ... "
 "It makes that sound too"
 "You guys are mean!"
+"Stop laughing at him! *looks at him* I'm laughing with you"
 */
