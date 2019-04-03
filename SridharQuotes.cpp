@@ -41,4 +41,6 @@
 "It makes that sound too"
 "You guys are mean!"
 "Stop laughing at him! *looks at him* I'm laughing with you"
+"You messed me up I'm going to stick to *inaudible*"
+"We asked the question 'Who screwed you?'"
 */
