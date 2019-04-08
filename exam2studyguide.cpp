@@ -27,6 +27,11 @@
 			- Know how to do top down and bottom up
 		- AVL trees
 			- Inserting numbers and fixing violations
+	- From April 8th
+		- C++ Zag implementation 
+		- AVL Tree
+		- Red-Black Tree
+		- 2-3 Tree
 
 - Things we went over but were not said would be on exam:
 	- From March 11th
@@ -48,4 +53,6 @@
 		- BST complexity
 	- From April 3rd
 		- Looks like it's all likely to be on the exam
+	- From April 8th
+		- Everything is likely to be on the exam
 */
