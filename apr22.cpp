@@ -1,0 +1,132 @@
+/*
+- Final Exam: Tuesday, May 7 8:00-10:00 am
+- Priority Search Trees
+- Sorting
+- Hashing
+- Quiz: Wendesday, April 24th
+	- Everything since midterm
+	- Graphs and Priority Search Trees
+
+Priority Search Trees
+	- Search Tree Functions
+		- find
+		- insert
+		- delete/remove
+		- find max
+		- find min
+		- delete min
+		- delete max
+	- AVL
+		- find: log(n)
+		- insert: log(n)
+		- remove: log(n)
+		- find max: 1*
+		- find min: 1*
+		- delete min: log(n)
+		- delete max: log(n)
+	- 2-3
+		- find: log(n)
+		- insert: log(n)
+		- remove: log(n)
+		- find max: 1*
+		- find min: 1*
+		- delete min: log(n)
+		- delete max: log(n)
+	- RB
+		- find: log(n)
+		- insert: log(n)
+		- remove: log(n)
+		- find max: 1*
+		- find min: 1*
+		- delete min: log(n)
+		- delete max: log(n)
+	- sorted array
+		- find: log(n)
+		- insert: n
+		- remove: n
+		- find max: 1
+		- find min: 1
+		- delete min: n
+		- delete max: n
+	- A data structure that allows for insert, find max, find min, delete max, delete min, is called a priority search tree (PST). The following are PSTs
+		- min heap
+			- insert: log(n)
+			- find min: 1
+			- find max: can't do it
+			- delete min: log(n)
+			- delete max: can't do it
+		- max heap
+			- insert: log(n)
+			- find min: can't do it
+			- find max: 1
+			- delete min: can't do it 
+			- delete max: log(n)
+		- min-max heap
+			- insert: log(n)
+			- find min: 1
+			- find max: 1
+			- delete min: log(n)
+			- delete max: log(n)
+		- deap
+			- insert: log(n)
+			- find min: 1
+			- find max: 1
+			- delete min: log(n)
+			- delete max: log(n)
+		- Data is stored in an array -> no pointers
+
+	- Min heap data structure
+		- Structural property
+			- complete binary tree
+			- maximum height: log(n)
+		- Ordering property
+			- The value at a node is smaller than all values stored in its subtree. 
+			- Minimum will always be the first element of the array, that's why its O(1) to find it. 
+		- See Sridhar's notes for insertion examples (bubble up..?)
+			- To insert, you have to assume that you have extra room in your array
+			- Stick number to insert in the last element of the array
+			- Compare the number with its parent (i - 1 / 2). If the parent is larger, do a swap. Continue until the number is in the correct spot
+		- See Sridhar's notes for delete min examples (trickle down..?)
+			- Take last element in the array, stick it in the root (where the minimum once was)
+			- Take the new root and compare it to both it's children (2i + 1, 2i + 2)
+			- Swap with the smallest chihld
+		- Sorting with min heap:
+			- Also called a heapsort
+			- You have an array: 5, 3, 14, 12, 11, 9
+			- First, insert each element. It's okay that it's not a min heap yet. Building the heap
+				- Each time you insert, worse case complexity is log(n). Inserting element = n. Building a heap = nlog(n)
+				- n delete mins will give you the sorted list: nlog(n)
+			- Total heapsort complexity: nlog(n)
+				- fastest sorting algorithm known
+	- Deap
+		- Root = dummy (whatever that means?)
+		- Left subtree from root = min heap
+		- Right subtree from root = max heap
+	- min-max heap
+		- root is at the min level
+		- children at the max level
+- Compression
+	- removing redundancy
+	- lossy or lossless
+		- D is data
+		- C(D) is compression of the data
+		- decompress(C(0)) = 1) is lossless
+		- jpeg = lossy
+	- AAAABBEEFFFFGGGG	
+		- Run length encoding: 4A 2B 2E 4F 4G
+	- Huffman compression (encoding)
+		- AABBABCCECEFAAAAABB
+		- 8 bit ASCII: 12 * 8 = 96 bits
+		- A: 8, B:5, C: 3, E: 2, F: 1
+
+- FOR THE QUIZ:
+	- min heap structural and ordering properties
+	- Construct a min heap given some numbers
+	- Know the algorithm for delete min and insert 
+		- ** in the textbook **
+	- Complexity of heap sort (and how to do it...?)
+	- Graphs
+	- Quiz Question: Give 2 symbols that occur the least in a huffman encoding problem. Form a BT
+					 Give 2 symbols that occur least frequently, excluding the previous 2. Continue BT
+					 See Sridhar's notes for picture, it's confusing without it. 
+*/
