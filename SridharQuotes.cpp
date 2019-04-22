@@ -49,4 +49,7 @@
 "Your social network is very sparse"
 "I'm just lazy. It's a big matrix, okay?"
 "That's smartness. Not me but somebody else"
+"'Why don't you teach me something better?!' right? Yeah, I know."
+"Who said 4?? You're so wrong."
+
 */
