@@ -43,4 +43,10 @@
 "Stop laughing at him! *looks at him* I'm laughing with you"
 "You messed me up I'm going to stick to *inaudible*"
 "We asked the question 'Who screwed you?'"
+"This one has to be black because, I don't know. *incoherent mumbling* it's not gonna work!"
+"Okay don't screw it up"
+"Facebook sucks. You follow Tweets?"
+"Your social network is very sparse"
+"I'm just lazy. It's a big matrix, okay?"
+"That's smartness. Not me but somebody else"
 */

@@ -30,8 +30,10 @@
 	- From April 8th
 		- C++ Zag implementation 
 		- AVL Tree
+			- Class definition
 		- Red-Black Tree
 		- 2-3 Tree
+			- Class definition
 
 - Things we went over but were not said would be on exam:
 	- From March 11th
