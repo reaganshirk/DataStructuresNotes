@@ -49,4 +49,61 @@ April 17:
 			}
 		}
 	}
+April 22nd
+				min heap	max heap	min-max heap	deap
+	insert		log(n)		log(n)		log(n)			log(n)
+	find min	1			x			1				1
+	find max	x			1			1				1
+	delete min	log(n)		x			log(n)			log(n)
+	delete max	x			log(n)		log(n)			log(n)	
+
+	- min heap:
+		- Structural properties:
+			- complete binary tree
+			- max height of log(n)
+		- Ordering properties:
+			- Value at node is smaller than all values in its subtree
+			- Minimum will always be first value in array
+		- Insert:
+			- Assume there is room in the array
+			- Stick number in the last element of the array
+			- Compare with parent (i - 1 / 2)
+			- If parent is larger, swap
+			- Continue until parent is smaller
+			- Not sure if this pseudocode is right but it's what I'd guess based off of the above info
+
+			void insert(int x)
+			{
+				array[size - 1] = x;
+				while (x.parent > x)
+				{
+					swap(x.parent, x);
+				}
+			}
+
+		- Delete:
+			- Move last array element to root
+			- Compare to both of its children (2i + 1, 2i + 2)
+			- Swap with smallest child
+			- Not sure if this pseudocode is right but it's what I'd guess based off of the above info
+
+			void delete()
+			{
+				int x = array[size - 1];
+				setRoot(x);
+				while (x.getChild < x) // while loop instead of if statement in case x has several children to check
+				{
+					swap(x.getChild, x);
+				}
+			}
+
+		- Sorting with min heap
+			- heapsort
+			- Inserting element = n, building heap = log(n), total = nlog(n)
+			- n number of deleteMins will give you a sorted list
+		- Huffman compression:
+			- Build tree off of the 2 least used symbols. 
+			- Use the tree to get the binary (ASCII? Idk) for each symbol
+			- Create binary (ASCII?) string
+			- Look at Sridhar's notes for this it confused me and his are more helpful
 */
