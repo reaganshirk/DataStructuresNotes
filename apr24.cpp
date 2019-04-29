@@ -1,0 +1,30 @@
+/*
+ - Sorting
+	- Comparisons A[i] >= B[j]
+	- Number of primitive operations = 3
+	- Non comparison based sorting algorithms:
+		- Simple Bucket Sort
+			- Want to know the largest number
+			- Create an array of that size
+			- ** Make sure that we remember this ** 
+		- Radix Sort
+			- Good for sorting strings apparently
+	- Comparison based sorting algorithm(s):
+		- Sorting by ranking
+			- Finding out who got highest grades on exam 2
+			- Assume you're ranked #1 (highest grade)
+			- Ask everyone else for their score
+			- If their score is higher than yours, rank them above you and move your rank
+			- If their score is lower than yours, rank them below you and adjust the ranks below you if necessary
+				- n^2 - n (or n - 1??) number of comparisons
+				- Need 3 arrays to print the sorted array
+			- O(n^2)
+		- Sorting by selection
+			- Go through entire array and find the first minimum
+				- Finding minimum takes O(n)
+			- Put that in first position in new array
+			- Replace it in the old array with -1 or something 
+			- Find the next smallest one and do it again
+				- Done n - 1 times
+			- O(n^2) comparisons, O(n) swaps (data movements). 
+*/
