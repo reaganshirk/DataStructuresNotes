@@ -51,5 +51,6 @@
 "That's smartness. Not me but somebody else"
 "'Why don't you teach me something better?!' right? Yeah, I know."
 "Who said 4?? You're so wrong."
-
+*answers phone call from wife in class*
+"I TOLD YOU I WAS GOING TO DO IT SOMEDAY"
 */
