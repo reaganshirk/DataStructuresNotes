@@ -1,13 +1,79 @@
 /*
- - Hashing:
+	- Hashing:
 		- Given a hash function and elements to hash on, provide techniques for handling collisions, handle the collisions
 		- Worst case time
 	- Graphs:
 		- Adjacency list, adjacency matrix, which is better and why. 
+			- Adjacency matrix: 
+				- O(n^2)
+				- Boolean matrix
+				- 0 down the diagonal from upper left to lower right if the graph is not connected
+				- 1 if the row value is connected to the column value, 0 if not
+				- adjMat[i][j] == 1 if (i, j) belongs to E
+			- Adjacency list: 
+				- A list of the index neighbors at that index
+					- i.e at the 0th index, there with be a list containing 4 and 1
+					- Array of lists, array of linkedlists, array of queues, whatever you want 
+				- O(n + m)
+			- Adjacency list is better than adjacency matrix because it has a smaller big O (depending on the size of m)
 		- Given a graph, draw the adjacency list and/or matrix. 
 		- Draw dfs, bfs and know the algorithms. 
+			- dfs
+				// main method
+				for (int i = 0; i < n; ++i)
+				{
+					visited[i] = false;
+					if (!visited[i])
+					{
+						dfs(i);
+					}
+				}
+
+				// dfs method
+				dfs (int x)
+				{
+					visited[x] = true;
+					for (each neighbor y of x)
+					{
+						if (!visited[y])
+						{
+							parent[y] = x;
+							dfs(y);
+						}
+					}
+				}
+
+			- bfs
+				// main method
+				for (int i = 0; i < n; ++i)
+				{
+					visited[i] = false;
+				}
+				bfs(1);
+
+				// bfs method
+				bfs(x)
+				{
+					Q.enqueue(x)
+					visited[x] = true;
+					while(!Q.empty)
+					{
+						k = Q.dequeue()
+						for (each unvisited neighbor y of k)
+						{
+							parent[y] = k;
+							visited[y] = true;
+							Q.enqueue(y);
+						}
+					}
+				}
 		- Applications
+			- For detecting cycles
+			- Determine the number of connected components
+			- To check if a graph is connected or not
 		- Maximum number of edges in both directed and undirected graphs
+			- directed graph: n^2 - n
+			- undirected graph: (n^2 - n) / 2
 		- May copy and paste questions from Quiz 3??
 	- Sorting
 		- Sorting by ranking algorithms
@@ -27,12 +93,32 @@
 	- Priority Search Trees
 		- Minimum heap
 			- English definition
+				- A minimum heap is a complete binary tree with a maximum height of log(n) where each value 
+				  at a node is smaller than all of the values stored in its subtree and the minimum is always the root
 			- Draw the min heap
 			- time complexity of operations
+							min heap
+				insert		log(n)
+				find min	1	
+				find max	x
+				delete min	log(n)
+				delete max	x
 		- min-max heap
 			- draw the min-max heap
 			- time complexity of operations
+							min-max heap
+				insert		log(n)
+				find min	1	
+				find max	1
+				delete min	log(n)
+				delete max	log(n)
 		- compare heap operations on BST (AVL, RB) and sorted array
+						2-3		RB		AVL		Sorted array
+			insert		log(n)	log(n)	log(n)	n
+			find min	1*		1*		1*		1
+			find max	1*		1*		1*		1
+			delete min	log(n)	log(n)	log(n)	n
+			delete max	log(n)	log(n)	log(n)	n
 	- self-adjusting BSTs
 		- C++ code for zig zag
 			- Zig
