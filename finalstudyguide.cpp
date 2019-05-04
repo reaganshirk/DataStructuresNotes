@@ -35,13 +35,108 @@
 		- compare heap operations on BST (AVL, RB) and sorted array
 	- self-adjusting BSTs
 		- C++ code for zig zag
+			- Zig
+				- Good way to remember code for Zig:
+					- check if tree is empty
+					- check if left is empty
+					- left = left
+					- left = right
+					- right = right
+					- right = left
+				template <class DT>
+				zig()
+				{
+					if (isEmpty())
+					{
+						return;
+					}
+					if (left.isEmpty())
+					{
+						return;
+					}
+					SelfModifyingBST<DT>* leftChild = left;
+					leftChild.left = leftChild.right;
+					leftChild.right = right;
+					right = leftChild;
+					swap(root, leftChild.root);
+				}
+			- Zag
+				- Good way to remember code for Zag:
+					- check if tree is empty
+					- check if right tree is empty
+					- right = right
+					- right = left
+					- left = left
+					- left = right
+				template <class DT>
+				zag()
+				{
+					if (isEmpty())
+					{
+						return;
+					}
+					if (right.isEmpty())
+					{
+						return;
+					}
+					SelfModifyingBST<DT>* rightChild = right;
+					right = rightChild.right;
+					rightChild.right = rightChild.left;
+					rightChild.left = left;
+					left = rightChild;
+					swap(root, rightChild.root);
+				}
+			- If you can remember how to do one, the other is just the opposite
 		- splay tree
 			- understand definition
+				- A tree that does a series of rotations (zigs and zags) to find a node in a BST. 
+				- It finds the node by making that node the root
 		- AVL, RB
 			- Will be given a tree, insert elements, find violation and do fix
+				- Violation: when the balance factor is not -1, 0, or 1
+				- Violations are fixed with zigs/zags
+					- right right violation: zag
+					- right left violation: zag zig
+					- left left violation: zig
+					- left right violation: zag
 			- Color an RB tree
+				- Root should be black (even though Sridhar says otherwise?)
+				- Empty tree is black
+				- Emtpy tree that becomes non-empty is a red tree
+				- The red condition: a red tree (node) never has a red subtree
+					- i.e. a red parent can't have any red children, a red child can't have a red parent
+				- The black condition: The number of black trees (nodes) along a path from the root to a leaf must be the same for each leaf
+					- Black height: height of the leaf
+				- The height h of a red black tree with black height b is not more than 2b + 1
+				- b <= h <= 2b + 1 <= 2log_2(n+1) + 1
+				- Class definition
+					- Same as a BST but also has a bool variable called color
+					- Override insert and remove methods
+					- Rotations
 		- 2-3 Tree
-			- Look at exam 2
+			- Look at exam 2 for insertion examples
+			- Class definition
+				template <class DT>
+				class twoThreeTree
+				{
+				protected:
+					DT* small;
+					DT* large;
+					twoThreeTree<DT>* left;
+					twoThreeTree<DT>* right;
+					twoThreeTree<DT>* middle;
+					bool subtree;
+				public:
+					remove(DT& data);
+					insert(DT& data);
+					find(DT& data);
+					size();
+					isEmpty();
+					isLeaf();
+					height();
+					threeNode();
+					small();
+				};
 	- Binary Trees
 		- Know all representations
 			- parent and children pointers
@@ -204,6 +299,15 @@
 			  We say that f(n) belongs to O(g(n)) if there is a real number c > 0 and a 
 			  fixed integer n_o \geq 1 such that f(n) \leq cg(n) for every integer n \geq n_o
 		- Number of primitive operations
+			int sum = 0;					--> 1 primitive operation
+			for (int i = 0; i < 100; ++i)	--> 3n + 2 primitive operations
+			{
+				if (i % 2)					--> 2n primitive operations
+				{
+					sum += i;				--> n primitive operations
+				}
+			}
+			1 + 3n + 2 + 2n + n = 6n + 3 = 6(100) + 3 = 603
 	- Bonus: Write Sridhar's Name
 		- Sridhar Radhakrishnan
 */
