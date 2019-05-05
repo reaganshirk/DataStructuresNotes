@@ -97,7 +97,7 @@
 				  at a node is smaller than all of the values stored in its subtree and the minimum is always the root
 			- Draw the min heap
 			- time complexity of operations
-							min heap
+						min heap
 				insert		log(n)
 				find min	1	
 				find max	x
@@ -106,17 +106,17 @@
 		- min-max heap
 			- draw the min-max heap
 			- time complexity of operations
-							min-max heap
+						min-max heap
 				insert		log(n)
 				find min	1	
 				find max	1
 				delete min	log(n)
 				delete max	log(n)
 		- compare heap operations on BST (AVL, RB) and sorted array
-						2-3		RB		AVL		Sorted array
+					2-3	RB	AVL	Sorted array
 			insert		log(n)	log(n)	log(n)	n
-			find min	1*		1*		1*		1
-			find max	1*		1*		1*		1
+			find min	1*	1*	1*	1
+			find max	1*	1*	1*	1
 			delete min	log(n)	log(n)	log(n)	n
 			delete max	log(n)	log(n)	log(n)	n
 	- self-adjusting BSTs
@@ -323,7 +323,9 @@
 			cout << s.pop
 	- LinkedList
 		- Number of ways a LinkedList can be created
-			- 
+			- Doubly Linked List
+			- Circulary Linked List
+			- Generalized List
 		- LinkedList destructor method, size method
 			- Size()
 				template <class DT>
@@ -395,5 +397,5 @@
 			}
 			1 + 3n + 2 + 2n + n = 6n + 3 = 6(100) + 3 = 603
 	- Bonus: Write Sridhar's Name
-		- Sridhar Radhakrishnan
+		- Sridhar Radhakrishnan (Rad-ha-krish-nan)
 */
