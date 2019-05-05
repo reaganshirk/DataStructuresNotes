@@ -2,6 +2,7 @@
 	- Hashing:
 		- Given a hash function and elements to hash on, provide techniques for handling collisions, handle the collisions
 		- Worst case time
+			- O(n) (probably??)
 	- Graphs:
 		- Adjacency list, adjacency matrix, which is better and why. 
 			- Adjacency matrix: 
@@ -79,16 +80,32 @@
 		- Sorting by ranking algorithms
 		- Sorting by selection algorithms
 			- Selection sort algorithm (complexity)
+				- O(n^2)
 			- Heap sort algorithm (complexity)
 				- Number of comparisons and data movements
+				- O(nlogn)
 		- Merge sort algorithm
 			- Given an array, do the splits and merges and shit
 			- O(nlogn)
 			- Merge sort sucks because it requires an extra array (takes up more space)
+						while ((i < n) && (j < m))
+							if A[i] < B{j]
+								C[k++] = A[i++]
+							else
+								C[k++] = B[j++]
+						if (i < n)
+							for (int a = i; a < n; ++a)
+								C[k++] = A[a]
+						else
+							for (int b = j; b < m; ++b)
+								Ck++] = B[b]
+					- above algorithm: O(n + m) * log(n + m)
 		- Quick sort algorithm
 			- Complexity O(n^2)
 			- Best case input
+				- Picks middle element as pivot, unsorted array
 			- Worst case input
+				- Picks smallest or largest element as pivot, sorted array
 		- Insertion sort
 	- Priority Search Trees
 		- Minimum heap
@@ -323,9 +340,10 @@
 			cout << s.pop
 	- LinkedList
 		- Number of ways a LinkedList can be created
-			- Doubly Linked List
-			- Circulary Linked List
-			- Generalized List
+			- LinkedList row (basic LinkedList)
+			- Doubly Linked List (pointer to previous as well as next)
+			- Circulary Linked List (points to itself eventually)
+			- Generalized List (next, down, value)
 		- LinkedList destructor method, size method
 			- Size()
 				template <class DT>
@@ -356,22 +374,20 @@
 
 	- Array, matricies
 		- Arrayclass data structure
-			Arrayclass<int*>* one;
-			one = new Arrayclass<int*>(10);
-			for (int i = 0; i < (*one).size; ++i)
+			class arrayClass
 			{
-					(*one)[i] = new int(0);
-			}
-
-			Arrayclass<Arrayclass<int>*>* two;
-			two = new Arrayclass<Arrayclass<int>*>(10);
-			for (int i = 0; i M (*two).size; ++i)
-			{
-				(*two)[i] = new Arrayclass<int>(10);
-				for (int j = 0; j < *((*two)[i]).size(); ++j)
-				{
-					(*(*two)[i])[j] = 0;
-				}
+			protected:
+				DT* object
+				int _size
+				void copy(const ArrayClass<DT>& ac)
+			public:
+				default constructor
+				copy constructor
+				non default constructor
+				destructor
+				size
+				= operator
+				[] operator 
 			}
 
 		- number of ways to store a matrix
