@@ -24,6 +24,10 @@
 				for (int i = 0; i < n; ++i)
 				{
 					visited[i] = false;
+				}
+
+				for (int i = 0; i < n; ++i)
+				{
 					if (!visited[i])
 					{
 						dfs(i);
