@@ -1,6 +1,11 @@
 /*
 	- Hashing:
 		- Given a hash function and elements to hash on, provide techniques for handling collisions, handle the collisions
+			- Given a hash function and elements
+				- Just plug the elements into the hash function and store them in the array index that the function gives
+			- Handling collisions:
+				- Chaining (array of LL)
+				- Linear probing (sticking everything in proper array indicies when you can, sticking them in the next open one when not)
 		- Worst case time
 			- O(n) (probably??)
 	- Graphs:
@@ -82,12 +87,52 @@
 		- May copy and paste questions from Quiz 3??
 	- Sorting
 		- Sorting by ranking algorithms
+			- Not sure if the below algorithm is the correct one but it's the only one I can find in the book that kinda makes sense
+				algorithm compareAndCount(K0, K1, ... , Kn-1)
+				{
+					Rank <-- createArray(n)
+					for (int i = 0; i < n - 1; ++i)
+					{
+						Rank[i] = 0;
+					}
+					for (int i = n - 1; i < 1; --i)
+					{
+						for (int j = i - 1; j < 0; --j)
+						{
+							if (Ki < Kj)
+							{
+								Rank[j] = Rank[j] + 1;
+							}
+							else
+							{
+								Rank[i] = Rank[i] + 1;
+							}
+						}
+					}
+				}
 		- Sorting by selection algorithms
 			- Selection sort algorithm (complexity)
 				- O(n^2)
+				algorithm selectionSort(A)
+				{
+					for (int i = A.size = 1; i < 1; --i)
+					{
+						maxIndex = 0;
+						for (int j = 0; j < i; ++j)
+						{
+							if (A[j] > A[maxIndex])
+							{
+								maxIndex = j;
+							}
+						}
+						Swap(A[i], A[maxIndex]);
+					}
+				}
 			- Heap sort algorithm (complexity)
 				- Number of comparisons and data movements
 				- O(nlogn)
+				- Heap sort definition:
+					- Doing a number of delete mins/delete maxs (depending on the heap) until the heap is emtpy. The resulting array will be sorted
 		- Merge sort algorithm
 			- Given an array, do the splits and merges and shit
 			- O(nlogn)
@@ -110,7 +155,45 @@
 				- Picks middle element as pivot, unsorted array
 			- Worst case input
 				- Picks smallest or largest element as pivot, sorted array
+			algorithm quickSort(A, left, right)
+			{
+				if (left < right)
+					pivot = A[left];
+					i = left;
+					j = right + 1;
+					do
+						do
+							i = i + 1;
+						while (i < A.size) && (A[i] < pivot)
+						do
+							j = j - 1;
+						while (A[j] > pivot)
+							if (i < j)
+								Swap(A[i], A[j])
+						while (i < j)
+						Swap(A[left], A[j])
+						quickSort(A, left, j - 1)
+						quickSort(A, j + 1, right)
+			}
 		- Insertion sort
+			template <class DT>
+			void insertionSort(ArrayClass<DT>& list)
+			{
+				int i, j;
+				DT insertElement;
+
+				for (i = 1; i < list.size(); ++i)
+				{
+					insertElement = list[i];
+					j = i - 1;
+					while ((j >= 0) && (insertElement < list[j]))
+					{
+						list[j + 1] = list[j];
+						--j;
+					}
+					list[j + 1] = insertElement;
+				}
+			}
 	- Priority Search Trees
 		- Minimum heap
 			- English definition
@@ -324,7 +407,27 @@
 				  inorder successor
 			- method for size and height
 				- Size()
+					template <class DT>
+					int binarySearchTree<DT>::size()
+					{
+						if (isEmpty())
+						{
+							return 0;
+						}
+
+						return (1 + left->size() + right->size());
+					}
 				- Height()
+					template <class DT>
+					int binarySearchTree<DT>::height()
+					{
+						if (isEmpty())
+						{
+							return 0;
+						}
+
+						return (1 + max(left->height(), right->height()));
+					}
 	- Stacks and queues
 		- Radix sort
 			- Complexity: O(n * L)
@@ -378,6 +481,24 @@
 
 	- Array, matricies
 		- Arrayclass data structure
+			Arrayclass<int*>* one;
+			one = new Arrayclass<int*>(10);
+			for (int i = 0; i < (*one).size; ++i)
+			{
+					(*one)[i] = new int(0);
+			}
+			Arrayclass<Arrayclass<int>*>* two;
+			two = new Arrayclass<Arrayclass<int>*>(10);
+			for (int i = 0; i M (*two).size; ++i)
+			{
+				(*two)[i] = new Arrayclass<int>(10);
+				for (int j = 0; j < *((*two)[i]).size(); ++j)
+				{
+					(*(*two)[i])[j] = 0;
+				}
+			}
+
+			// class definition, not explicity said was needed but wasn't sure if above code was the data structure or if this is
 			class arrayClass
 			{
 			protected:
