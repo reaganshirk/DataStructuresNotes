@@ -95,9 +95,9 @@
 					{
 						Rank[i] = 0;
 					}
-					for (int i = n - 1; i < 1; --i)
+					for (int i = n - 1; i > 1; --i)
 					{
-						for (int j = i - 1; j < 0; --j)
+						for (int j = i - 1; j > 0; --j)
 						{
 							if (Ki < Kj)
 							{
@@ -115,7 +115,7 @@
 				- O(n^2)
 				algorithm selectionSort(A)
 				{
-					for (int i = A.size = 1; i < 1; --i)
+					for (int i = A.size; i > 1; --i)
 					{
 						maxIndex = 0;
 						for (int j = 0; j < i; ++j)
