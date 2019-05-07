@@ -270,7 +270,6 @@
 						return;
 					}
 					SelfModifyingBST<DT>* rightChild = right;
-					right = rightChild.right;
 					rightChild.right = rightChild.left;
 					rightChild.left = left;
 					left = rightChild;
